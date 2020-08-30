@@ -1,0 +1,85 @@
+ <div class="container mt-5">
+  <div>
+    <p style="color:rgb(210,105,30);
+    font-size: 4vw;
+     text-align: center;
+    text-shadow:  1px 1px rgb(0, 0, 139);">Simpli<span style="color:rgb(30,144,255)">Recruit</span></p>
+</div>
+ 
+   <div class="row" style="font-size: 20px;background-color: cadetblue; border: 2px solid black">
+    <div class="col-md-12 col-sm-12">
+    <div class="col-md-12 col-sm-12 text-center mt-2">
+      <input type="button" style="border: 1px solid black;border-radius: 12px;" value="1" (click)= flipQuestionEventHandler(1)>
+      <input type="button" value="2" style="border: 1px solid black;border-radius: 12px;" (click)= flipQuestionEventHandler(2)>
+    
+      <input type="button" value="3" style="border: 1px solid black;border-radius: 12px;" (click)= flipQuestionEventHandler(3)>
+    
+      <input type="button" value="4" style="border: 1px solid black;border-radius: 12px;" (click)= flipQuestionEventHandler(4)>
+      <input type="button" value="5" style="border: 1px solid black;border-radius: 12px;" (click)= flipQuestionEventHandler(5)>
+      <input type="button" value="6" style="border: 1px solid black;border-radius: 12px;" (click)= flipQuestionEventHandler(6)>
+      <input type="button" value="7" style="border: 1px solid black;border-radius: 12px;" (click)= flipQuestionEventHandler(7)>
+      <input type="button" value="8" style="border: 1px solid black;border-radius: 12px;" (click)= flipQuestionEventHandler(8)>
+      <input type="button" value="9" style="border: 1px solid black;border-radius: 15px;"(click)= flipQuestionEventHandler(9)>
+      <input type="button" value="10" style="border: 1px solid black;border-radius: 15px;" (click)= flipQuestionEventHandler(10)>
+     
+    
+    </div> 
+
+
+   <div  style="background-color:brown ; margin-top: 10px; margin-left: 20px; border: 1px solid black">
+    
+    <b><p style="color:white ;padding:5px 5px 1px 5px" >Question Number:{{currentQuestionNumber}} </p></b>
+    </div>
+ 
+     <div class="col-12 mt-2">
+
+  
+   <p>{{questionArray[currentQuestionNumber-1].question|json}}</p> 
+ <div class="radio">
+    <label><input type="radio" name="optradio"   (change)="changeRadioEventHandler(1)" [checked]="this.selected==1">{{questionArray[currentQuestionNumber-1].option1|json}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="optradio"   (change)="changeRadioEventHandler(2)" [checked]="this.selected==2">{{questionArray[currentQuestionNumber-1].option2|json}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="optradio"   (change)="changeRadioEventHandler(3)" [checked]="this.selected==3">{{questionArray[currentQuestionNumber-1].option3|json}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="optradio"  (change)="changeRadioEventHandler(4)" [checked]="this.selected==4">{{questionArray[currentQuestionNumber-1].option4|json}}</label>
+  </div>
+
+
+    <div class="text-center">
+      <div class="row">
+        <div class="col-md-2 col-sm-6" *ngIf="currentQuestionNumber!=1">
+            <input type="button" class="mb-4 " id ="btnp" value="Previous" (click)= "previousEventHandler()">
+        </div>
+        <div class="col-md-2 col-sm-6 offset-md-10" *ngIf="currentQuestionNumber==1">
+          <input type="button" class="mb-4 " id='btn' value="Next" (click)= "nextQuestionEventHandler()">
+      </div>
+
+        <div class="col-md-2 col-sm-6 offset-md-8" *ngIf="currentQuestionNumber!=10 && currentQuestionNumber!=1">
+            <input type="button" class="mb-4 " id='btn' value="Next" (click)= "nextQuestionEventHandler()">
+        </div>
+     
+    <div class="col-md-2 col-sm-6 offset-md-8" *ngIf="currentQuestionNumber==10"> 
+        <input type="button" class="mb-4" id='btn2'  value="Submit" (click)= " submitEventHandler()">
+     </div>
+ 
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+
+ 
+
+
+ <b><p class="card-text" [hidden]="!analyse" >Correct Answer = {{questionArray[currentQuestionNumber].Answer}}</p></b>
+
+</div>
+</div>

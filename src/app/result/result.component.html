@@ -1,0 +1,32 @@
+
+<div class="container mt-5" >
+    <div>
+        <p style="color:rgb(210,105,30);
+        font-size: 4vw;
+         text-align: center;
+        text-shadow:  1px 1px rgb(0, 0, 139);">Simpli<span style="color:rgb(30,144,255)">Recruit</span></p>
+    </div>
+    <div class="text-center" style="margin-top: 50px;">
+        <h1 style="color: gold">Thanks for taking the test</h1>
+
+<h1>Final Result ={{marks}}</h1>
+<div *ngIf="marks<5; then ifTemplate; else elseTemplate" >
+
+</div>
+<ng-template #ifTemplate>
+<h1 style="color:crimson">Sorry, You Won't be able to go for further rounds </h1>
+</ng-template>
+<ng-template #elseTemplate>
+
+   <h1 style="color:darkgreen">Congratulations you Have Passed the Test</h1> 
+</ng-template>
+  
+<div>
+    <input type="button" class="btn btn-primary" value="Click To view Answers" (click)="analyseEventHandler()">
+</div>
+
+
+</div>
+
+
+</div>
